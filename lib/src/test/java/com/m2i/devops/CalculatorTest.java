@@ -6,6 +6,8 @@ import org.junit.Test;
 
 public class CalculatorTest {
 
+	public Object toto = null;
+	
 	@Test
 	public void testAdd() {
 		int a = 2;
