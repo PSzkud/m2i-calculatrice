@@ -12,6 +12,7 @@ plugins {
     id 'jacoco'
     id 'checkstyle'
     id "com.github.spotbugs" version "4.7.0"
+    id 'pmd'
 }
 
 repositories {
@@ -49,4 +50,13 @@ task checkstyleMain (type: Checkstyle, overwrite: true) {
 	exclude '**/gen/**'
 	classpath = fileTree("${project.buildDir}/classes/java/main/")
 	configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
+}
+
+pmd {
+  ignoreFailures = true
+  consoleOutput = true
+  toolVersion = "6.21.0"
+  pmdTest.enabled = false
+  rulesMinimumPriority = 5
+  ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
 }
