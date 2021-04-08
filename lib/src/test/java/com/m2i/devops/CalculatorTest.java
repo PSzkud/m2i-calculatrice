@@ -53,8 +53,8 @@ public class CalculatorTest {
 		assertTrue(actual2);
 	}
 	
-	@Test
-	public void testFail() {
-		fail("For test Jenkins");
-	}
+//	@Test
+//	public void testFail() {
+//		fail("For test Jenkins");
+//	}
 }
