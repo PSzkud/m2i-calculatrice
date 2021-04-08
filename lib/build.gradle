@@ -11,7 +11,6 @@ plugins {
     id 'java-library'
     id 'jacoco'
     id "com.github.spotbugs" version "4.7.0"
-    id "com.github.warnings-ng-plugin" version "8.10.1"
 }
 
 repositories {
