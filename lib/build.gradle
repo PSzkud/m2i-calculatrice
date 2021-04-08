@@ -58,5 +58,10 @@ pmd {
   toolVersion = "6.21.0"
   pmdTest.enabled = false
   rulesMinimumPriority = 5
-  ruleSets = ["category/java/errorprone.xml", "category/java/bestpractices.xml"]
+  ruleSets = ["category/java/errorprone.xml",
+    "category/java/bestpractices.xml",
+    "category/java/codestyle.xml",
+    "category/java/documentation.xml",
+    "category/java/security.xml"
+  ]
 }
