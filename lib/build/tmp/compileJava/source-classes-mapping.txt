@@ -1,2 +1,4 @@
 com/m2i/devops/Application.java
  com.m2i.devops.Application
+com/m2i/devops/Calculator.java
+ com.m2i.devops.Calculator
