@@ -10,6 +10,7 @@ plugins {
     // Apply the java-library plugin for API and implementation separation.
     id 'java-library'
     id 'jacoco'
+    id 'checkstyle'
     id "com.github.spotbugs" version "4.7.0"
 }
 
@@ -33,4 +34,19 @@ dependencies {
 spotbugs {
 	ignoreFailures = true
 	spotbugsTest.enabled = false
+}
+
+checkstyle {
+	toolVersion = "8.41.1"
+	checkstyleTest.enabled = false
+}
+
+task checkstyleMain (type: Checkstyle, overwrite: true) {
+	ignoreFailures = true
+	showViolations = false
+	source fileTree('src/main/java')
+	include '**/*.java'
+	exclude '**/gen/**'
+	classpath = fileTree("${project.buildDir}/classes/java/main/")
+	configFile = file("${rootProject.rootDir}/config/checkstyle/checkstyle.xml")
 }
